@@ -1,0 +1,81 @@
+// Default mixins and settings -----------------
+@import 'reveal.js/css/theme/template/mixins';
+@import 'reveal.js/css/theme/template/settings';
+// ---------------------------------------------
+
+// Include theme-specific fonts
+@import url("https://use.typekit.net/rsp7nrm.css");
+
+html * {
+  color-profile: sRGB;
+  rendering-intent: auto;
+}
+
+$base03: #2d3e50;
+$base02: #33475b;
+$base01: #425b76;
+$base00: #516f90;
+$base0: #CBD6E2;
+$base1: #EAF0F6;
+$base2: #F5F8FA;
+$base3: #ffffff;
+$yellow: #F5C26B;
+$orange: #FF8F59;
+$red: #F2545B;
+$magenta: #F2547D;
+$violet: #6A78D1;
+$blue: #268bd2;
+$cyan: #2aa198;
+$lime: #859900;
+$green: #00BDA5;
+$lorax: #ff7a59;
+$calypso: #00a4bd;
+
+// Override theme settings (see ../template/settings.scss)
+$mainFont: source-sans-3;
+$mainFontSize: 36px;
+$headingFont: source-sans-3;
+$mainColor: $base1;
+$heading1Size: 3em;
+$heading2Size: 2em;
+$heading3Size: 1.35em;
+$heading4Size: 1em;
+$heading5Size: .8em;
+$headingColor: $base2;
+$headingTextShadow: none;
+$headingFontWeight: light;
+$backgroundColor: $base03;
+$linkColor: $calypso;
+$linkColorHover: lighten($linkColor, 20%);
+$selectionBackgroundColor: $lorax;
+$headingTextTransform: none;
+
+// Change text colors against light slide backgrounds
+@include light-bg-text-color(#222);
+
+// Theme template ------------------------------
+@import 'reveal.js/css/theme/template/theme';
+// ---------------------------------------------
+
+:root {
+  --r-base03: #{$base03};
+  --r-base02: #{$base02};
+  --r-base01: #{$base01};
+  --r-base00: #{$base00};
+  --r-base0: #{$base0};
+  --r-base1: #{$base1};
+  --r-base2: #{$base2};
+  --r-base3: #{$base3};
+  --r-yellow: #{$yellow};
+  --r-orange: #{$orange};
+  --r-red: #{$red};
+  --r-magenta: #{$magenta};
+  --r-violet: #{$violet};
+  --r-blue: #{$blue};
+  --r-cyan: #{$cyan};
+  --r-green: #{$green};
+  --r-lime: #{$lime};
+  --r-lorax: #{$lorax};
+  --r-calypso: #{$calypso};
+  --r-heading5-size: #{$heading5Size};
+}

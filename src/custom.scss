@@ -1,0 +1,15 @@
+.reveal pre {
+  box-shadow: none;
+}
+
+.line {
+  width: 100%;
+
+  &.line-selected {
+    background-color: $calypso;
+
+    & .linenumber {
+      color: white !important;
+    }
+  }
+}
