@@ -1,10 +1,10 @@
-import { SectionTitleSlide, Slide } from '../../components';
-import { CallStack } from './CallStack';
-import { JSEnv } from './JSEnv';
-import { JSEngine } from './JSEngine';
-import { AsynchronyDefinition } from './AsynchronyDefinition';
-import { EventLoop } from './EventLoop';
-import { FullPicture } from './FullPicture';
+import { SectionTitleSlide, Slide } from "../../components";
+import { CallStack } from "./CallStack";
+import { JSEnv } from "./JSEnv";
+import { JSEngine } from "./JSEngine";
+import { AsynchronyDefinition } from "./AsynchronyDefinition";
+import { EventLoop } from "./EventLoop";
+import { FullPicture } from "./FullPicture";
 
 const notes = `**NEXT**`;
 

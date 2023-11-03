@@ -1,4 +1,4 @@
-import { SectionTitleSlide } from '../../../components';
+import { SectionTitleSlide } from "../../../components";
 
 const notes = `
 Generators are yet another concept that is often used to facilitate working with

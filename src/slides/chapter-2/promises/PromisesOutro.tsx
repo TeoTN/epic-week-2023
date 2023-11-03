@@ -1,4 +1,4 @@
-import { TwoColumns } from '../../../components/TwoColumns';
+import { TwoColumns } from "../../../components/TwoColumns";
 import { Markdown, Slide, SlideTitle } from "../../../components";
 
 const pros = `

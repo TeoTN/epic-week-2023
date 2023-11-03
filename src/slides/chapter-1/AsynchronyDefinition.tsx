@@ -1,5 +1,5 @@
-import { Markdown, Slide, SlideTitle } from '../../components';
-import { Notes } from '../../components/Notes';
+import { Markdown, Slide, SlideTitle } from "../../components";
+import { Notes } from "../../components/Notes";
 
 const notes = `
 Asynchrony can be understood as a gap between now and later. It's a mechanism,
@@ -28,7 +28,7 @@ export const AsynchronyDefinition = () => (
         program execution
       </li>
       <li className="fragment">
-        There's a <strong>gap</strong> between code executing{' '}
+        There's a <strong>gap</strong> between code executing{" "}
         <strong>now</strong> and scheduled for <strong>later</strong>
       </li>
     </ul>

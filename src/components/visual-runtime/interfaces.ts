@@ -1,8 +1,9 @@
 import {
-  ApiCallEffect, MicroTaskEffect,
+  ApiCallEffect,
+  MicroTaskEffect,
   SideEffect,
   StackFrameEffect,
-  TaskEffect
+  TaskEffect,
 } from "./effects";
 
 export interface RuntimeManager {

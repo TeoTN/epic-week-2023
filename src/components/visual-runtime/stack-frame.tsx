@@ -1,7 +1,7 @@
-import { StackFrameEffect } from './effects';
-import { useEffect, useRef } from 'react';
-import { useDispatch } from './use-dispatch';
-import styled from 'styled-components';
+import { StackFrameEffect } from "./effects";
+import { useEffect, useRef } from "react";
+import { useDispatch } from "./use-dispatch";
+import styled from "styled-components";
 
 const Frame = styled.div`
   display: flex;
@@ -10,7 +10,7 @@ const Frame = styled.div`
   padding: 0.25rem 0.5rem;
   font-size: ${({ theme }) => theme.fonts.size.code};
   color: ${({ theme }) => theme.colors.light.base0};
-  
+
   & pre {
     display: inline;
     font-size: ${({ theme }) => theme.fonts.size.code};
@@ -44,7 +44,7 @@ export const StackFrame = ({
         <pre className="inline text-accent">{name}</pre> frame:
       </span>
       <ul className="text-2xs border-gray-300 pl-3">
-        <li>Arguments: {args.length > 0 ? args.join(', ') : 'NONE'}</li>
+        <li>Arguments: {args.length > 0 ? args.join(", ") : "NONE"}</li>
         <li>Called from: #{ln}</li>
       </ul>
     </Frame>

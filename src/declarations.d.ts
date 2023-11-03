@@ -1,16 +1,16 @@
-import 'styled-components';
-import { Theme } from './theme';
+import "styled-components";
+import { Theme } from "./theme";
 
-declare module 'styled-components' {
+declare module "styled-components" {
   export interface DefaultTheme extends Theme {}
 }
 
-declare module '*.png' {
+declare module "*.png" {
   const path: string;
   export default path;
 }
 
-declare module '*.svg' {
+declare module "*.svg" {
   const path: string;
   export default path;
 }

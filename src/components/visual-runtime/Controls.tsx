@@ -1,7 +1,7 @@
-import { SideEffect } from './effects';
-import { ReactElement, useRef, useState } from 'react';
-import { RevertCallback, useDispatch } from './use-dispatch';
-import { Button } from './Button';
+import { SideEffect } from "./effects";
+import { ReactElement, useRef, useState } from "react";
+import { RevertCallback, useDispatch } from "./use-dispatch";
+import { Button } from "./Button";
 
 interface ControlsProps {
   playbook: SideEffect[];
@@ -31,8 +31,12 @@ export const Controls = ({ playbook }: ControlsProps): ReactElement => {
 
   return (
     <>
-      <Button onClick={onPrev} disabled={!prevEnabled()}>Prev</Button>
-      <Button onClick={onNext} disabled={!nextEnabled()}>Next</Button>
+      <Button onClick={onPrev} disabled={!prevEnabled()}>
+        Prev
+      </Button>
+      <Button onClick={onNext} disabled={!nextEnabled()}>
+        Next
+      </Button>
     </>
   );
 };

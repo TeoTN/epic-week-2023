@@ -1,32 +1,34 @@
-import orderingKiosk from '../../../assets/ordering-kiosk.png';
-import receipt from '../../../assets/receipt.png';
-import todoList from '../../../assets/todo-list.png';
-import burger from '../../../assets/burger.png';
-import restaurant from '../../../assets/burgersland.png';
-import fryingPan from '../../../assets/frying-pan.png';
-import fire from '../../../assets/fire.png';
-import { Slide, SlideTitle } from '../../../components';
-import React, { HTMLAttributes, PropsWithChildren } from 'react';
-import { Notes } from '../../../components/Notes';
-import styled from 'styled-components';
+import orderingKiosk from "../../../assets/ordering-kiosk.png";
+import receipt from "../../../assets/receipt.png";
+import todoList from "../../../assets/todo-list.png";
+import burger from "../../../assets/burger.png";
+import restaurant from "../../../assets/burgersland.png";
+import fryingPan from "../../../assets/frying-pan.png";
+import fire from "../../../assets/fire.png";
+import { Slide, SlideTitle } from "../../../components";
+import React, { HTMLAttributes, PropsWithChildren } from "react";
+import { Notes } from "../../../components/Notes";
+import styled from "styled-components";
 
 interface CircleProps {
   index: number;
   placeholder?: boolean;
 }
 
-const Circle = styled.div.withConfig({
-  shouldForwardProp: (prop) => !['index', 'placeholder'].includes(prop),
-}).attrs(({ index }: CircleProps): any => ({
-  'data-fragment-index': index,
-  className: 'fragment',
-}))<CircleProps>`
+const Circle = styled.div
+  .withConfig({
+    shouldForwardProp: (prop) => !["index", "placeholder"].includes(prop),
+  })
+  .attrs(({ index }: CircleProps): any => ({
+    "data-fragment-index": index,
+    className: "fragment",
+  }))<CircleProps>`
   position: relative;
   display: flex;
   background-color: ${({ theme }) => theme.colors.calypso};
-  border-radius: ${({ placeholder }) => placeholder ? '0' : '64px'};
+  border-radius: ${({ placeholder }) => (placeholder ? "0" : "64px")};
   width: 160px;
-  height: ${({ placeholder }) => placeholder ? '16px' : '160px'};
+  height: ${({ placeholder }) => (placeholder ? "16px" : "160px")};
   align-items: center;
   justify-content: center;
   z-index: 900;

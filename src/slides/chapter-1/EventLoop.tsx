@@ -1,7 +1,7 @@
-import { Markdown, Slide, SlideTitle } from '../../components';
-import { Notes } from '../../components/Notes';
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
+import { Markdown, Slide, SlideTitle } from "../../components";
+import { Notes } from "../../components/Notes";
+import styled from "styled-components";
+import { motion } from "framer-motion";
 
 const notes1 = `
 Another important building block of the runtime environment that I would like to
@@ -54,23 +54,30 @@ const LoopItem = styled(motion.div)`
 
 const animate = {
   x: [
-    -.75 * ITEM_SIZE,
+    -0.75 * ITEM_SIZE,
     -ITEM_SIZE,
     0,
     ITEM_SIZE,
-    .75* ITEM_SIZE,
-    -.75 * ITEM_SIZE,
+    0.75 * ITEM_SIZE,
+    -0.75 * ITEM_SIZE,
   ],
   y: [-2 * ITEM_SIZE, 0, 0, 0, -2 * ITEM_SIZE, -2 * ITEM_SIZE],
   scale: [0.5, 1, 1, 1, 0.5, 0.5],
-  opacity: [.3, 1, 1, 1, .3, .3],
+  opacity: [0.3, 1, 1, 1, 0.3, 0.3],
   rotate: [270, 0, 0, 0, 270, 0],
-  borderRadius: ["50%", "10%", "10%", "10%","50%", "50%"],
-  backgroundColor: ['#ffffff', '#ffffff', '#00BDA5', '#ffffff', '#ffffff', '#ffffff'],
+  borderRadius: ["50%", "10%", "10%", "10%", "50%", "50%"],
+  backgroundColor: [
+    "#ffffff",
+    "#ffffff",
+    "#00BDA5",
+    "#ffffff",
+    "#ffffff",
+    "#ffffff",
+  ],
 };
 const transition = {
   duration: 2,
-  ease: ['linear', 'backIn', 'backIn','linear', 'linear'],
+  ease: ["linear", "backIn", "backIn", "linear", "linear"],
   times: [0.3, 1, 1.5, 2, 2.5],
   repeat: Infinity,
   repeatDelay: 0.3,
@@ -88,11 +95,26 @@ export const EventLoop = () => {
       <Slide>
         <SlideTitle>Event Loop</SlideTitle>
         <EventLoopContainer>
-          <LoopItem animate={animate} transition={{...transition, delay: 2.8 }} />
-          <LoopItem animate={animate} transition={{...transition, delay: 2.3 }} />
-          <LoopItem animate={animate} transition={{ ...transition, delay: 1.8 }} />
-          <LoopItem animate={animate} transition={{ ...transition, delay: 1.3 }} />
-          <LoopItem animate={animate} transition={{ ...transition, delay: 0.8 }} />
+          <LoopItem
+            animate={animate}
+            transition={{ ...transition, delay: 2.8 }}
+          />
+          <LoopItem
+            animate={animate}
+            transition={{ ...transition, delay: 2.3 }}
+          />
+          <LoopItem
+            animate={animate}
+            transition={{ ...transition, delay: 1.8 }}
+          />
+          <LoopItem
+            animate={animate}
+            transition={{ ...transition, delay: 1.3 }}
+          />
+          <LoopItem
+            animate={animate}
+            transition={{ ...transition, delay: 0.8 }}
+          />
         </EventLoopContainer>
         <Notes>
           <Markdown>{notes2}</Markdown>

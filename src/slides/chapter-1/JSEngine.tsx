@@ -104,9 +104,7 @@ export const JSEngine = () => (
       </Heap>
     </Engine>
     <Notes>
-      <Markdown>
-        {notes}
-      </Markdown>
+      <Markdown>{notes}</Markdown>
     </Notes>
   </Slide>
 );

@@ -1,5 +1,5 @@
-import { ThunksIntro } from './ThunksIntro';
-import { ThunksExample } from './ThunksExample';
+import { ThunksIntro } from "./ThunksIntro";
+import { ThunksExample } from "./ThunksExample";
 
 export const Thunks = () => (
   <>

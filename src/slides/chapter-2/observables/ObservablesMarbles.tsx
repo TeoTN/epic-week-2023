@@ -1,6 +1,6 @@
-import { Markdown, Slide, SlideTitle } from '../../../components';
-import { Notes } from '../../../components/Notes';
-import rxjsMarbles from '../../../assets/rxjs-marbles.png';
+import { Markdown, Slide, SlideTitle } from "../../../components";
+import { Notes } from "../../../components/Notes";
+import rxjsMarbles from "../../../assets/rxjs-marbles.png";
 
 const notes = `
 If you are curious how a particular operator works in RxJS, there's an excellent
@@ -16,7 +16,9 @@ write unit tests for them which are also expressed visually using ASCII diagrams
 
 export const ObservablesMarbles = () => (
   <Slide>
-    <SlideTitle subtitle="Source: https://rxmarbles.com/">Observables</SlideTitle>
+    <SlideTitle subtitle="Source: https://rxmarbles.com/">
+      Observables
+    </SlideTitle>
     <div>
       <img src={rxjsMarbles} alt="RxJS Marbles diagram" />
     </div>

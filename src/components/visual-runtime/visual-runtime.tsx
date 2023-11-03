@@ -1,13 +1,13 @@
-import { ReactElement } from 'react';
-import { withErrorBoundary } from './error-boundary';
-import { SideEffect } from './effects';
-import { Markdown } from '../Markdown';
-import styled from 'styled-components';
-import { useRuntimeManager } from './use-runtime-manager';
-import { RuntimeContext } from './runtime-context';
-import { StackFrame } from './stack-frame';
-import { Task } from './task';
-import { Controls } from './Controls';
+import { ReactElement } from "react";
+import { withErrorBoundary } from "./error-boundary";
+import { SideEffect } from "./effects";
+import { Markdown } from "../Markdown";
+import styled from "styled-components";
+import { useRuntimeManager } from "./use-runtime-manager";
+import { RuntimeContext } from "./runtime-context";
+import { StackFrame } from "./stack-frame";
+import { Task } from "./task";
+import { Controls } from "./Controls";
 
 interface VisualRuntimeProps {
   playbook: SideEffect[];
@@ -24,12 +24,12 @@ const RuntimeBox = styled.div`
   padding-left: ${({ theme }) => theme.spacing(1)};
   padding-right: ${({ theme }) => theme.spacing(1)};
 
-  ${({ theme }) => theme.breakpoints.down('sm')} {
+  ${({ theme }) => theme.breakpoints.down("sm")} {
     flex-direction: column;
   }
 `;
 
-const CallStackWrapper = styled.div.attrs({ className: 'stack' })`
+const CallStackWrapper = styled.div.attrs({ className: "stack" })`
   width: 100%;
   margin: 1.25rem 0;
   display: flex;
@@ -48,7 +48,7 @@ const CallStackWrapper = styled.div.attrs({ className: 'stack' })`
   }
 `;
 
-const Queue = styled.div.attrs({ className: 'queue' })`
+const Queue = styled.div.attrs({ className: "queue" })`
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -82,65 +82,75 @@ const EditorArea = styled.div`
   flex: 1 0 65%;
 `;
 
-export const VisualRuntime = withErrorBoundary({ scope: 'visual-runtime' })(
-  ({ playbook, snippet, showApiCalls, showTasks, showMicroTasks }: VisualRuntimeProps): ReactElement => {
-    const manager = useRuntimeManager();
+export const VisualRuntime = withErrorBoundary({ scope: "visual-runtime" })(({
+  playbook,
+  snippet,
+  showApiCalls,
+  showTasks,
+  showMicroTasks,
+}: VisualRuntimeProps): ReactElement => {
+  const manager = useRuntimeManager();
 
-    return (
-      <RuntimeContext.Provider value={manager}>
-        <RuntimeBox>
-          <EditorArea>
-            <Markdown
-              highlighterProps={{
-                showLineNumbers: true,
-                wrapLines: true,
-                codeTagProps: {
-                  style: { display: 'flex', flexDirection: 'column' },
-                },
-                lineProps: (lineNumber: number): any => {
-                  if (lineNumber === manager.linePointer) {
-                    return { className: 'line line-selected' };
-                  }
-                  return { className: 'line' };
-                },
-              }}
-            >
-              {snippet}
-            </Markdown>
-            <FloatingControls>
-              <Controls playbook={playbook} />
-            </FloatingControls>
-          </EditorArea>
-          <CallStackWrapper>
-            <FeatureTitle>Call stack</FeatureTitle>
-            <div className="body">
-              {manager.stack.map((frame, i) => (
-                <StackFrame key={i} {...frame} />
-              ))}
-            </div>
-          </CallStackWrapper>
-        </RuntimeBox>
-        <Toolbox>
-          {showTasks && (<Queue>
+  return (
+    <RuntimeContext.Provider value={manager}>
+      <RuntimeBox>
+        <EditorArea>
+          <Markdown
+            highlighterProps={{
+              showLineNumbers: true,
+              wrapLines: true,
+              codeTagProps: {
+                style: { display: "flex", flexDirection: "column" },
+              },
+              lineProps: (lineNumber: number): any => {
+                if (lineNumber === manager.linePointer) {
+                  return { className: "line line-selected" };
+                }
+                return { className: "line" };
+              },
+            }}
+          >
+            {snippet}
+          </Markdown>
+          <FloatingControls>
+            <Controls playbook={playbook} />
+          </FloatingControls>
+        </EditorArea>
+        <CallStackWrapper>
+          <FeatureTitle>Call stack</FeatureTitle>
+          <div className="body">
+            {manager.stack.map((frame, i) => (
+              <StackFrame key={i} {...frame} />
+            ))}
+          </div>
+        </CallStackWrapper>
+      </RuntimeBox>
+      <Toolbox>
+        {showTasks && (
+          <Queue>
             <FeatureTitle>Task queue</FeatureTitle>
             {manager.tasks.map((task, i) => (
               <Task key={i} {...task} />
             ))}
-          </Queue>)}
-          {showApiCalls && <Queue>
+          </Queue>
+        )}
+        {showApiCalls && (
+          <Queue>
             <FeatureTitle>Runtime API</FeatureTitle>
             {manager.apiCalls.map((task, i) => (
               <Task key={i} {...task} />
             ))}
-          </Queue>}
-          {showMicroTasks && <Queue>
+          </Queue>
+        )}
+        {showMicroTasks && (
+          <Queue>
             <FeatureTitle>Microtasks queue</FeatureTitle>
             {manager.microTasks.map((task, i) => (
               <Task key={i} {...task} />
             ))}
-          </Queue>}
-        </Toolbox>
-      </RuntimeContext.Provider>
-    );
-  },
-);
+          </Queue>
+        )}
+      </Toolbox>
+    </RuntimeContext.Provider>
+  );
+});

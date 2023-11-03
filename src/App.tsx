@@ -1,10 +1,11 @@
-import { SlidesDeck, TitlePage } from './components';
-import { Chapter1, Chapter2, Outro } from './slides';
-import { ThemeProvider } from 'styled-components';
-import { theme } from './theme';
-import { useEffect } from 'react';
-import Reveal from 'reveal.js';
-import { revealConfig } from './reveal.config';
+import { useEffect } from "react";
+import Reveal from "reveal.js";
+import { ThemeProvider } from "styled-components";
+import { SlidesDeck } from "./components";
+import { revealConfig } from "./reveal.config";
+import { Chapter1, Chapter2, Outro } from "./slides";
+import { Intro } from "./slides/Intro";
+import { theme } from "./theme";
 
 export const App = () => {
   useEffect(() => {
@@ -14,16 +15,12 @@ export const App = () => {
       clearTimeout(t);
     };
   }, []);
-  
+
   return (
     <ThemeProvider theme={theme}>
       <div className="reveal">
         <SlidesDeck>
-          <TitlePage
-            title="Asynchrony in JS"
-            subtitle="Between now and then"
-            author="Piotr Staniów"
-          />
+          <Intro />
           <Chapter1 />
           <Chapter2 />
           <Outro />
@@ -33,4 +30,4 @@ export const App = () => {
   );
 };
 
-export default App
+export default App;

@@ -1,6 +1,6 @@
-import { Markdown, Slide, SlideTitle } from '../../../components';
-import { VisualRuntime } from '../../../components/visual-runtime';
-import { Notes } from '../../../components/Notes';
+import { Markdown, Slide, SlideTitle } from "../../../components";
+import { VisualRuntime } from "../../../components/visual-runtime";
+import { Notes } from "../../../components/Notes";
 import {
   apiCall,
   compose,
@@ -11,7 +11,7 @@ import {
   repeat,
   SideEffect,
   task,
-} from '../../../components/visual-runtime/effects';
+} from "../../../components/visual-runtime/effects";
 
 const snippet = `
 ~~~js
@@ -26,57 +26,57 @@ setTimeout(function callback() {
 `;
 
 const playbook: SideEffect[] = [
-  compose(pushStack('main', { args: [], ln: 0, handler: 'main' }), pushLine(1)),
+  compose(pushStack("main", { args: [], ln: 0, handler: "main" }), pushLine(1)),
   compose(
-    pushStack('setTimeout', {
+    pushStack("setTimeout", {
       ln: 1,
-      args: ['callback', 1000],
-      handler: 'stack.timeout',
+      args: ["callback", 1000],
+      handler: "stack.timeout",
     }),
     repeat(pushLine, { times: 5 }),
   ),
-  apiCall('Timer API', { handler: 'api.timer' }),
+  apiCall("Timer API", { handler: "api.timer" }),
   compose(
-    popStack('api.timer'),
-    task('timer', 0, { handler: 'task.timer' }),
+    popStack("api.timer"),
+    task("timer", 0, { handler: "task.timer" }),
     pushLine(),
   ),
-  compose(popStack('api.timer'), popStack('stack.timeout'), popStack('main')),
+  compose(popStack("api.timer"), popStack("stack.timeout"), popStack("main")),
   compose(
-    pushStack('callback', { handler: 'stack.callback', args: [], ln: 1 }),
+    pushStack("callback", { handler: "stack.callback", args: [], ln: 1 }),
     pushLine(2),
-    popStack('task.timer'),
+    popStack("task.timer"),
   ),
   compose(
-    pushStack('Promise.then', {
+    pushStack("Promise.then", {
       ln: 2,
-      args: ['anonymous Fn'],
-      handler: 'stack.promise-then',
+      args: ["anonymous Fn"],
+      handler: "stack.promise-then",
     }),
-    microTask('anonymous Fn', { handler: 'microtask.promise-then' }),
+    microTask("anonymous Fn", { handler: "microtask.promise-then" }),
   ),
-  compose(popStack('stack.promise-then'), repeat(pushLine, { times: 3 })),
-  pushStack('console.log', {
-    args: ['Listener 1'],
+  compose(popStack("stack.promise-then"), repeat(pushLine, { times: 3 })),
+  pushStack("console.log", {
+    args: ["Listener 1"],
     ln: 4,
-    handler: 'stack.log:listener',
+    handler: "stack.log:listener",
   }),
-  compose(popStack('stack.log:listener'), popStack('stack.callback')),
+  compose(popStack("stack.log:listener"), popStack("stack.callback")),
   compose(
-    popStack('microtask.promise-then'),
-    pushStack('anonymous Fn', {
+    popStack("microtask.promise-then"),
+    pushStack("anonymous Fn", {
       args: [],
       ln: 3,
-      handler: 'stack.anonymous',
+      handler: "stack.anonymous",
     }),
     pushLine(3),
   ),
-  pushStack('console.log', {
-    args: ['Microtask 1'],
+  pushStack("console.log", {
+    args: ["Microtask 1"],
     ln: 3,
-    handler: 'stack.log:microtask',
+    handler: "stack.log:microtask",
   }),
-  compose(popStack('stack.log:microtask'), popStack('stack.anonymous')),
+  compose(popStack("stack.log:microtask"), popStack("stack.anonymous")),
 ];
 
 const notes = `

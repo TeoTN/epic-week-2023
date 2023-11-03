@@ -1,10 +1,10 @@
-import { PromisesIntro } from './PromisesIntro';
-import { PromisesParallel } from './PromisesParallel';
-import { PromisesDualism } from './PromisesDualism';
-import { PromisesAntipatterns } from './PromisesAntipatterns';
-import { PromisesOutro } from './PromisesOutro';
-import { PromisesMicroTasks } from './PromisesMicroTasks';
-import { PromisesMicroTaskVisualization } from './PromisesMicroTaskVisualization';
+import { PromisesIntro } from "./PromisesIntro";
+import { PromisesParallel } from "./PromisesParallel";
+import { PromisesDualism } from "./PromisesDualism";
+import { PromisesAntipatterns } from "./PromisesAntipatterns";
+import { PromisesOutro } from "./PromisesOutro";
+import { PromisesMicroTasks } from "./PromisesMicroTasks";
+import { PromisesMicroTaskVisualization } from "./PromisesMicroTaskVisualization";
 
 export const Promises = () => (
   <>

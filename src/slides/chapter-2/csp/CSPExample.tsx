@@ -3,8 +3,8 @@ import {
   SectionTitleSlide,
   Slide,
   SlideTitle,
-} from '../../../components';
-import { Notes } from '../../../components/Notes';
+} from "../../../components";
+import { Notes } from "../../../components/Notes";
 
 const notes = `
 This is an example of how a communicating process might look like. 

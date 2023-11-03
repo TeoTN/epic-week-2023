@@ -1,4 +1,4 @@
-import { Markdown, Slide } from '../../components';
+import { Markdown, Slide } from "../../components";
 
 const body = `
 ## Asynchronous APIs

@@ -1,5 +1,5 @@
-import { Markdown, Slide, SlideTitle } from '../../../components';
-import { Notes } from '../../../components/Notes';
+import { Markdown, Slide, SlideTitle } from "../../../components";
+import { Notes } from "../../../components/Notes";
 
 const notes = `
 Similarly to promises, observables exhibit some dualism in their API - the below
@@ -24,14 +24,14 @@ const observable$ = new Observable((observer) => {
   };
 });
 ~~~
-`
+`;
 
 export const ObservablesConstructor = () => (
   <Slide>
     <SlideTitle>Observables</SlideTitle>
-    <Markdown>
-      {snippet}
-    </Markdown>
-    <Notes><Markdown>{notes}</Markdown></Notes>
+    <Markdown>{snippet}</Markdown>
+    <Notes>
+      <Markdown>{notes}</Markdown>
+    </Notes>
   </Slide>
 );

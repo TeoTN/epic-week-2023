@@ -1,4 +1,4 @@
-import { ElementType, PropsWithChildren, ReactElement } from 'react';
+import { ElementType, PropsWithChildren, ReactElement } from "react";
 
 interface Props {
   subtitle?: string;
@@ -8,7 +8,7 @@ interface Props {
 export const SlideTitle = ({
   subtitle,
   children,
-  component: Component = 'h3',
+  component: Component = "h3",
 }: PropsWithChildren<Props>): ReactElement => (
   <>
     <Component data-id="slide-title">{children}</Component>

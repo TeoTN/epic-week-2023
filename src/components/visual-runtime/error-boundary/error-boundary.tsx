@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 enum ScopeState {
   OK,
@@ -39,7 +39,7 @@ export class ErrorBoundary extends React.Component<
   render() {
     const { scopeState } = this.state;
     const {
-      title = 'Unexpected error occurred',
+      title = "Unexpected error occurred",
       description,
       scope,
       children,

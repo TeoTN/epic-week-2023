@@ -1,12 +1,13 @@
 import {
-  ApiCallEffect, MicroTaskEffect,
+  ApiCallEffect,
+  MicroTaskEffect,
   SideEffect,
   StackFrameEffect,
-  TaskEffect
+  TaskEffect,
 } from "./effects";
-import { RuntimeManager } from './interfaces';
-import { useCallback, useMemo, useState } from 'react';
-import { SideEffectType } from './effects/types';
+import { RuntimeManager } from "./interfaces";
+import { useCallback, useMemo, useState } from "react";
+import { SideEffectType } from "./effects/types";
 
 const getKey = ({ name, type, handler }: SideEffect) =>
   JSON.stringify({ name, type, handler });
@@ -46,7 +47,7 @@ export const useRuntimeManager = (): RuntimeManager => {
     [effects],
   );
   const findEffect = useCallback(
-    (lookup: SideEffect['handler']) =>
+    (lookup: SideEffect["handler"]) =>
       effects.find(({ handler }) => handler === lookup),
     [effects],
   );

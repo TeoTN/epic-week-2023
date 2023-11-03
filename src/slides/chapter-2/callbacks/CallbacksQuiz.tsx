@@ -1,5 +1,5 @@
 import { Markdown, Slide, SlideTitle } from "../../../components";
-import { Notes } from '../../../components/Notes';
+import { Notes } from "../../../components/Notes";
 
 const body = `
 ~~~js
@@ -25,6 +25,8 @@ export const CallbacksQuiz = () => (
   <Slide>
     <SlideTitle>What is printed in the console?</SlideTitle>
     <Markdown>{body}</Markdown>
-    <Notes><Markdown>{notes}</Markdown></Notes>
+    <Notes>
+      <Markdown>{notes}</Markdown>
+    </Notes>
   </Slide>
 );

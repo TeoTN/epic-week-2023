@@ -1,5 +1,5 @@
-import { Markdown, Slide, SlideTitle } from '../../../components';
-import { Notes } from '../../../components/Notes';
+import { Markdown, Slide, SlideTitle } from "../../../components";
+import { Notes } from "../../../components/Notes";
 
 const snippet = `
 ~~~js
@@ -34,11 +34,12 @@ in the line after we created it, we could have passed it as an argument to
 another function or API, that would invoke it at a later time.
 `;
 
-
 export const ThunksExample = () => (
   <Slide>
     <SlideTitle>Thunks</SlideTitle>
     <Markdown>{snippet}</Markdown>
-    <Notes><Markdown>{notes}</Markdown></Notes>
+    <Notes>
+      <Markdown>{notes}</Markdown>
+    </Notes>
   </Slide>
-)
+);

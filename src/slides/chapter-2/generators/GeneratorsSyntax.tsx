@@ -1,5 +1,5 @@
-import { Markdown, Slide, SlideTitle } from '../../../components';
-import { Notes } from '../../../components/Notes';
+import { Markdown, Slide, SlideTitle } from "../../../components";
+import { Notes } from "../../../components/Notes";
 
 const snippet = `
 ~~~js
@@ -35,12 +35,14 @@ only be resumed when the iterator's next method is called. Because of that, even
 though we have an infinite loop in the function, it won't block the main thread,
 at least unless we create another infinite loop that will try to exhaust all 
 values of that iterator.   
-`
+`;
 
 export const GeneratorsSyntax = () => (
   <Slide>
     <SlideTitle>Generators</SlideTitle>
     <Markdown>{snippet}</Markdown>
-    <Notes><Markdown>{notes}</Markdown></Notes>
+    <Notes>
+      <Markdown>{notes}</Markdown>
+    </Notes>
   </Slide>
-)
+);

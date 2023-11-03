@@ -1,4 +1,4 @@
-import { Markdown, Slide, SlideTitle } from '../../../components';
+import { Markdown, Slide, SlideTitle } from "../../../components";
 import { Notes } from "../../../components/Notes";
 
 const snippet = `
@@ -36,14 +36,12 @@ has happened.
 To actually be able to attach a meaningful stack trace to promises, browsers are
 attaching a call stack snapshot to a promise, so that when it gets rejected, we 
 can see where it originates from.
-`
+`;
 
 export const AsyncAwaitErrorHandling = () => (
   <Slide>
     <SlideTitle subtitle="Error handling">Async / Await syntax</SlideTitle>
-    <Markdown id="async-await-getWeather">
-      {snippet}
-    </Markdown>
+    <Markdown id="async-await-getWeather">{snippet}</Markdown>
     <Notes>
       <Markdown>{notes}</Markdown>
     </Notes>

@@ -1,11 +1,11 @@
-import { Markdown, Slide, SlideTitle } from '../../components';
-import { Notes } from '../../components/Notes';
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
-import V8Icon from '../../assets/V8_engine.svg';
-import QueueIcon from '../../assets/queue.png';
-import APIIcon from '../../assets/api.png';
-import LoopIcon from '../../assets/loop.png';
+import { Markdown, Slide, SlideTitle } from "../../components";
+import { Notes } from "../../components/Notes";
+import styled from "styled-components";
+import { motion } from "framer-motion";
+import V8Icon from "../../assets/V8_engine.svg";
+import QueueIcon from "../../assets/queue.png";
+import APIIcon from "../../assets/api.png";
+import LoopIcon from "../../assets/loop.png";
 
 const RuntimeEnvironment = styled.div`
   display: flex;
@@ -22,7 +22,7 @@ const RuntimeEnvironment = styled.div`
   padding: 1rem;
 `;
 
-const Engine = styled(motion.div).attrs({ className: 'fragment' })`
+const Engine = styled(motion.div).attrs({ className: "fragment" })`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -93,9 +93,7 @@ export const JSEnv = () => (
       </APIs>
     </RuntimeEnvironment>
     <Notes>
-      <Markdown>
-        {notes}
-      </Markdown>
+      <Markdown>{notes}</Markdown>
     </Notes>
   </Slide>
 );

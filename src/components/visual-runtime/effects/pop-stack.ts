@@ -1,4 +1,4 @@
-import { BaseSideEffect, SideEffectType } from './types';
+import { BaseSideEffect, SideEffectType } from "./types";
 
 export interface PopEffect extends BaseSideEffect {
   type: SideEffectType.POP_EFFECT;

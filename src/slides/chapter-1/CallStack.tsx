@@ -1,35 +1,35 @@
 import { Markdown, Slide, SlideTitle } from "../../components";
-import { VisualRuntime } from '../../components/visual-runtime';
+import { VisualRuntime } from "../../components/visual-runtime";
 import {
   compose,
   popStack,
   pushLine,
   pushStack,
   repeat,
-} from '../../components/visual-runtime/effects';
+} from "../../components/visual-runtime/effects";
 import { Notes } from "../../components/Notes";
 
 const playbook = [
-  pushStack('main', { args: [], ln: 0, handler: 'invoke-main' }),
+  pushStack("main", { args: [], ln: 0, handler: "invoke-main" }),
   repeat(pushLine, { times: 3 }),
   repeat(pushLine, { times: 4 }),
   pushLine(),
   compose(
-    pushStack('plus5', { ln: 9, args: [3], handler: 'invoke-plus5' }),
+    pushStack("plus5", { ln: 9, args: [3], handler: "invoke-plus5" }),
     pushLine(5),
   ),
   pushLine(),
   compose(
-    pushStack('sum', { ln: 6, args: [3, 5], handler: 'invoke-sum' }),
+    pushStack("sum", { ln: 6, args: [3, 5], handler: "invoke-sum" }),
     pushLine(1),
   ),
   pushLine(),
-  compose(popStack('invoke-sum'), pushLine(6)),
-  compose(popStack('invoke-plus5'), pushLine(9)),
+  compose(popStack("invoke-sum"), pushLine(6)),
+  compose(popStack("invoke-plus5"), pushLine(9)),
   pushLine(),
-  pushStack('console.log', { ln: 10, args: [8], handler: 'invoke-log' }),
-  popStack('invoke-log'),
-  popStack('invoke-main'),
+  pushStack("console.log", { ln: 10, args: [8], handler: "invoke-log" }),
+  popStack("invoke-log"),
+  popStack("invoke-main"),
 ];
 
 const snippet = `

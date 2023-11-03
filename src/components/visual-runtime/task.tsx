@@ -1,9 +1,9 @@
 import { ApiCallEffect, MicroTaskEffect, TaskEffect } from "./effects";
-import { useCallback, useRef } from 'react';
-import { useBoundingClientRect } from './useBoundingClientRect';
-import { useDispatch } from './use-dispatch';
-import { motion } from 'framer-motion';
-import styled from 'styled-components';
+import { useCallback, useRef } from "react";
+import { useBoundingClientRect } from "./useBoundingClientRect";
+import { useDispatch } from "./use-dispatch";
+import { motion } from "framer-motion";
+import styled from "styled-components";
 
 const Box = styled(motion.div)`
   font-size: ${({ theme }) => theme.fonts.size.code};
@@ -43,14 +43,14 @@ export const Task = ({
             y: -dY,
             opacity: 0.5,
             scale: 0,
-            borderRadius: '50%',
+            borderRadius: "50%",
           }}
           animate={{
             opacity: 1,
             x: 0,
             y: 0,
             scale: 1,
-            borderRadius: '0%',
+            borderRadius: "0%",
           }}
           onAnimationComplete={dispatchEffects}
           transition={{ duration: 0.75 }}

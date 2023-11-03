@@ -1,10 +1,10 @@
 // eslint-disable-next-line @typescript-eslint/no-empty-function
-import { SideEffect } from './effects';
-import { useCallback, useContext } from 'react';
-import { RuntimeContext } from './runtime-context';
-import { SideEffectType } from './effects/types';
-import { UnreachableCaseError } from './utils';
-import { delay } from './effects/delay';
+import { SideEffect } from "./effects";
+import { useCallback, useContext } from "react";
+import { RuntimeContext } from "./runtime-context";
+import { SideEffectType } from "./effects/types";
+import { UnreachableCaseError } from "./utils";
+import { delay } from "./effects/delay";
 
 const noop = () => {};
 const invoke = (fn: () => void) => fn();
@@ -21,7 +21,7 @@ async function* repeater(effects: SideEffect[]) {
 export const useDispatch = (): Dispatcher => {
   const manager = useContext(RuntimeContext);
   if (!manager) {
-    throw new Error('Cannot use outside of RuntimeContext');
+    throw new Error("Cannot use outside of RuntimeContext");
   }
 
   const getRevertCallback = (effect: SideEffect): RevertCallback => {

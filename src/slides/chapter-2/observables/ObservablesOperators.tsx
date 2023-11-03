@@ -1,5 +1,5 @@
-import { Markdown, Slide, SlideTitle } from '../../../components';
-import { Notes } from '../../../components/Notes';
+import { Markdown, Slide, SlideTitle } from "../../../components";
+import { Notes } from "../../../components/Notes";
 
 const notes = `
 What is interesting however, is that RxJS provides a lot of functions that allow
@@ -39,7 +39,7 @@ inputTyping$
     results.innerText = searchResults;
   });
 ~~~
-`
+`;
 
 export const ObservablesOperators = () => (
   <Slide>

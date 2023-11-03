@@ -1,6 +1,6 @@
-import { TwoColumns } from '../../../components/TwoColumns';
-import { Markdown, Slide, SlideTitle } from '../../../components';
-import { Notes } from '../../../components/Notes';
+import { TwoColumns } from "../../../components/TwoColumns";
+import { Markdown, Slide, SlideTitle } from "../../../components";
+import { Notes } from "../../../components/Notes";
 
 const snippet1 = `
 ~~~js
@@ -44,13 +44,11 @@ export const PromisesDualism = () => (
   <Slide>
     <SlideTitle subtitle="API dualism">Promises</SlideTitle>
     <TwoColumns
-      left={
-        <Markdown>{snippet1}</Markdown>
-      }
-      right={
-        <Markdown>{snippet2}</Markdown>
-      }
+      left={<Markdown>{snippet1}</Markdown>}
+      right={<Markdown>{snippet2}</Markdown>}
     />
-    <Notes><Markdown>{notes}</Markdown></Notes>
+    <Notes>
+      <Markdown>{notes}</Markdown>
+    </Notes>
   </Slide>
 );

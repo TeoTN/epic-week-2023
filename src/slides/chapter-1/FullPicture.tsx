@@ -1,6 +1,6 @@
-import { Slide, SlideTitle } from '../../components';
-import { VisualRuntime } from '../../components/visual-runtime';
-import { thePlaybook, theSnippet } from '../../components/visual-runtime/demo';
+import { Slide, SlideTitle } from "../../components";
+import { VisualRuntime } from "../../components/visual-runtime";
+import { thePlaybook, theSnippet } from "../../components/visual-runtime/demo";
 import {
   apiCall,
   compose,
@@ -10,7 +10,7 @@ import {
   repeat,
   SideEffect,
   task,
-} from '../../components/visual-runtime/effects';
+} from "../../components/visual-runtime/effects";
 
 const snippet = `
 ~~~js
@@ -33,10 +33,10 @@ console.log(a);
 
 const playbook: SideEffect[] = [
   compose(
-    pushStack('main', {
+    pushStack("main", {
       args: [],
       ln: 0,
-      handler: 'main',
+      handler: "main",
       sideEffects: undefined,
       animateFrom: undefined,
     }),
@@ -47,64 +47,64 @@ const playbook: SideEffect[] = [
   repeat(pushLine, { times: 4 }),
   compose(
     pushLine(),
-    pushStack('setTimeout', {
+    pushStack("setTimeout", {
       ln: 11,
-      args: ['callback1', 2000],
-      handler: 'timeout-1',
+      args: ["callback1", 2000],
+      handler: "timeout-1",
       sideEffects: [
-        apiCall('Timer API', {
+        apiCall("Timer API", {
           sideEffects: [
-            task('timer', 2000, {
-              handler: 'task-1',
-              sideEffects: [popStack('api-1')],
+            task("timer", 2000, {
+              handler: "task-1",
+              sideEffects: [popStack("api-1")],
             }),
           ],
-          handler: 'api-1',
+          handler: "api-1",
         }),
       ],
     }),
   ),
-  compose(popStack('timeout-1'), pushLine()),
+  compose(popStack("timeout-1"), pushLine()),
   compose(
-    pushStack('setTimeout', {
+    pushStack("setTimeout", {
       ln: 12,
-      args: ['callback2', 3000],
-      handler: 'timeout-2',
+      args: ["callback2", 3000],
+      handler: "timeout-2",
       sideEffects: [
-        apiCall('Timer API', {
+        apiCall("Timer API", {
           sideEffects: [
-            task('timer', 3000, {
-              handler: 'task-2',
-              sideEffects: [popStack('api-2')],
+            task("timer", 3000, {
+              handler: "task-2",
+              sideEffects: [popStack("api-2")],
             }),
           ],
-          handler: 'api-2',
+          handler: "api-2",
         }),
       ],
     }),
   ),
-  compose(popStack('timeout-2'), pushLine()),
-  pushStack('console.log', { ln: 13, args: [15], handler: 'global-log' }),
-  popStack('global-log'),
-  popStack('main'),
+  compose(popStack("timeout-2"), pushLine()),
+  pushStack("console.log", { ln: 13, args: [15], handler: "global-log" }),
+  popStack("global-log"),
+  popStack("main"),
   compose(
-    pushStack('callback1', { ln: 11, args: [], handler: 'callback1' }),
-    popStack('task-1'),
+    pushStack("callback1", { ln: 11, args: [], handler: "callback1" }),
+    popStack("task-1"),
     pushLine(2),
   ),
   repeat(pushLine, { times: 2 }),
-  pushStack('console.log', { ln: 4, args: [30], handler: 'log-1' }),
-  compose(pushLine(), popStack('log-1')),
-  compose(popStack('callback1'), pushLine(0)),
+  pushStack("console.log", { ln: 4, args: [30], handler: "log-1" }),
+  compose(pushLine(), popStack("log-1")),
+  compose(popStack("callback1"), pushLine(0)),
   compose(
-    pushStack('callback2', { ln: 12, args: [], handler: 'callback2' }),
-    popStack('task-2'),
+    pushStack("callback2", { ln: 12, args: [], handler: "callback2" }),
+    popStack("task-2"),
     pushLine(6),
   ),
   repeat(pushLine, { times: 2 }),
-  pushStack('console.log', { ln: 8, args: [33], handler: 'log-2' }),
-  compose(pushLine(), popStack('log-2')),
-  compose(popStack('callback2'), pushLine(0)),
+  pushStack("console.log", { ln: 8, args: [33], handler: "log-2" }),
+  compose(pushLine(), popStack("log-2")),
+  compose(popStack("callback2"), pushLine(0)),
 ];
 
 export const FullPicture = () => {

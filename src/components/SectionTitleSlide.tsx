@@ -1,6 +1,6 @@
-import { ComponentProps, ReactElement } from 'react';
-import { Slide } from './Slide';
-import { Notes } from './Notes';
+import { ComponentProps, ReactElement } from "react";
+import { Slide } from "./Slide";
+import { Notes } from "./Notes";
 
 interface Props extends ComponentProps<typeof Slide> {
   title: string;
@@ -11,7 +11,7 @@ interface Props extends ComponentProps<typeof Slide> {
 export const SectionTitleSlide = ({
   title,
   subtitle,
-  notes = 'Are there any questions about the previous section?',
+  notes = "Are there any questions about the previous section?",
   ...props
 }: Props): ReactElement => (
   <Slide {...props}>

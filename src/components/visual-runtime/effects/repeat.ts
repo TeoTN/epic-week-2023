@@ -1,9 +1,9 @@
-import { BaseSideEffect, SideEffectType } from './types';
-import { SideEffect } from './index';
+import { BaseSideEffect, SideEffectType } from "./types";
+import { SideEffect } from "./index";
 
 export interface RepeatEffect extends BaseSideEffect {
   type: SideEffectType.REPEAT;
-  name: '';
+  name: "";
   sideEffects: SideEffect[];
 }
 
@@ -11,9 +11,12 @@ interface Options {
   times: number;
 }
 
-export const repeat = (effectCreator: () => SideEffect, { times }: Options): RepeatEffect => ({
+export const repeat = (
+  effectCreator: () => SideEffect,
+  { times }: Options,
+): RepeatEffect => ({
   type: SideEffectType.REPEAT,
-  name: '',
+  name: "",
   sideEffects: Array.from(new Array(times), effectCreator),
   delay: 300,
 });

@@ -1,4 +1,4 @@
-import { BaseSideEffect, SideEffectType } from './types';
+import { BaseSideEffect, SideEffectType } from "./types";
 
 export interface StackFrameEffect extends BaseSideEffect {
   type: SideEffectType.STACK_FRAME;
@@ -6,9 +6,15 @@ export interface StackFrameEffect extends BaseSideEffect {
   ln: number;
 }
 
-type PushStackOptions = Pick<StackFrameEffect, 'args' | 'ln' | 'sideEffects' | 'animateFrom' | 'handler'>;
+type PushStackOptions = Pick<
+  StackFrameEffect,
+  "args" | "ln" | "sideEffects" | "animateFrom" | "handler"
+>;
 
-export const pushStack = (name: string, options: PushStackOptions): StackFrameEffect => ({
+export const pushStack = (
+  name: string,
+  options: PushStackOptions,
+): StackFrameEffect => ({
   type: SideEffectType.STACK_FRAME,
   name,
   delay: 0,

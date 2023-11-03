@@ -1,4 +1,4 @@
-import { Markdown, Slide, SlideTitle } from '../../../components';
+import { Markdown, Slide, SlideTitle } from "../../../components";
 import { Notes } from "../../../components/Notes";
 
 const snippet = `
@@ -27,8 +27,6 @@ although it simply uses the value and does nothing interesting with it.
 export const AsyncAwaitMixAndMatch = () => (
   <Slide>
     <SlideTitle subtitle="Return type">Async / Await syntax</SlideTitle>
-    <Markdown id="async-await-returnType">
-      {snippet}
-    </Markdown>
+    <Markdown id="async-await-returnType">{snippet}</Markdown>
   </Slide>
 );

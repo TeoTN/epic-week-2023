@@ -1,4 +1,4 @@
-import { Markdown, Slide, SlideTitle } from '../../../components';
+import { Markdown, Slide, SlideTitle } from "../../../components";
 import { Notes } from "../../../components/Notes";
 
 const snippet = `
@@ -26,14 +26,12 @@ functions are - well - asynchronous.
 You can think of it, as if the await keyword
 was actually splitting your function into two pieces, the former executed now,
 and the latter executed at a later time, when the awaited promise gets resolved. 
-`
+`;
 
 export const AsyncAwaitMotivation = () => (
   <Slide>
     <SlideTitle>Async / Await syntax</SlideTitle>
-    <Markdown id="async-await-getWeather">
-      {snippet}
-    </Markdown>
+    <Markdown id="async-await-getWeather">{snippet}</Markdown>
     <Notes>
       <Markdown>{notes}</Markdown>
     </Notes>

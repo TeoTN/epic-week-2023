@@ -1,4 +1,4 @@
-import { SideEffect } from './index';
+import { SideEffect } from "./index";
 
 export interface Origin {
   x: number;
@@ -6,14 +6,14 @@ export interface Origin {
 }
 
 export enum SideEffectType {
-  PUSH_LINE = 'PUSH_LINE',
-  STACK_FRAME = 'STACK_FRAME',
-  TASK = 'TASK',
-  API_CALL = 'API_CALL',
-  POP_EFFECT = 'POP_EFFECT',
-  REPEAT = 'REPEAT',
-  COMPOSE = 'COMPOSE',
-  MICROTASK = 'MICROTASK',
+  PUSH_LINE = "PUSH_LINE",
+  STACK_FRAME = "STACK_FRAME",
+  TASK = "TASK",
+  API_CALL = "API_CALL",
+  POP_EFFECT = "POP_EFFECT",
+  REPEAT = "REPEAT",
+  COMPOSE = "COMPOSE",
+  MICROTASK = "MICROTASK",
 }
 
 export interface BaseSideEffect {

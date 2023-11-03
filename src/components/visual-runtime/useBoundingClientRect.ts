@@ -1,4 +1,4 @@
-import { MutableRefObject, useCallback, useEffect, useState } from 'react';
+import { MutableRefObject, useCallback, useEffect, useState } from "react";
 
 function getBoundingClientRect(
   element: HTMLElement,

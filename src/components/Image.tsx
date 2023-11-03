@@ -1,4 +1,4 @@
-import { CSSProperties } from 'react';
+import { CSSProperties } from "react";
 
 interface Props {
   src: string;
@@ -7,13 +7,13 @@ interface Props {
   className?: string;
 }
 
-export const Image = ({ src, alt, style, className = '' }: Props) => (
+export const Image = ({ src, alt, style, className = "" }: Props) => (
   <div
     className={`r-stretch ${className}`}
     style={{
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
       margin: 0,
       padding: 0,
       ...style,
@@ -22,7 +22,7 @@ export const Image = ({ src, alt, style, className = '' }: Props) => (
     <img
       data-src={src}
       alt={alt}
-      style={{ display: 'block', height: 'inherit', objectFit: 'scale-down' }}
+      style={{ display: "block", height: "inherit", objectFit: "scale-down" }}
     />
   </div>
 );

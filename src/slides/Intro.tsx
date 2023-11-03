@@ -1,4 +1,4 @@
-import { TitlePage } from '../components';
+import { TitlePage } from "../components";
 
 export const Intro = () => (
   <TitlePage

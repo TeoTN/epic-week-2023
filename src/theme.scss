@@ -1,6 +1,6 @@
 // Default mixins and settings -----------------
-@import 'reveal.js/css/theme/template/mixins';
-@import 'reveal.js/css/theme/template/settings';
+@import "reveal.js/css/theme/template/mixins";
+@import "reveal.js/css/theme/template/settings";
 // ---------------------------------------------
 
 // Include theme-specific fonts
@@ -15,19 +15,19 @@ $base03: #2d3e50;
 $base02: #33475b;
 $base01: #425b76;
 $base00: #516f90;
-$base0: #CBD6E2;
-$base1: #EAF0F6;
-$base2: #F5F8FA;
+$base0: #cbd6e2;
+$base1: #eaf0f6;
+$base2: #f5f8fa;
 $base3: #ffffff;
-$yellow: #F5C26B;
-$orange: #FF8F59;
-$red: #F2545B;
-$magenta: #F2547D;
-$violet: #6A78D1;
+$yellow: #f5c26b;
+$orange: #ff8f59;
+$red: #f2545b;
+$magenta: #f2547d;
+$violet: #6a78d1;
 $blue: #268bd2;
 $cyan: #2aa198;
 $lime: #859900;
-$green: #00BDA5;
+$green: #00bda5;
 $lorax: #ff7a59;
 $calypso: #00a4bd;
 
@@ -40,7 +40,7 @@ $heading1Size: 3em;
 $heading2Size: 2em;
 $heading3Size: 1.35em;
 $heading4Size: 1em;
-$heading5Size: .8em;
+$heading5Size: 0.8em;
 $headingColor: $base2;
 $headingTextShadow: none;
 $headingFontWeight: light;
@@ -54,7 +54,7 @@ $headingTextTransform: none;
 @include light-bg-text-color(#222);
 
 // Theme template ------------------------------
-@import 'reveal.js/css/theme/template/theme';
+@import "reveal.js/css/theme/template/theme";
 // ---------------------------------------------
 
 :root {

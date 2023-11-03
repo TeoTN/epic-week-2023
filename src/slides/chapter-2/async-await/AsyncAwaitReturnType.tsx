@@ -1,4 +1,4 @@
-import { Markdown, Slide, SlideTitle } from '../../../components';
+import { Markdown, Slide, SlideTitle } from "../../../components";
 import { Notes } from "../../../components/Notes";
 
 const snippet1 = `
@@ -38,20 +38,16 @@ returned as the return value from that async function.
 
 export const AsyncAwaitReturnType = () => (
   <>
-  <Slide>
-    <SlideTitle subtitle="Return type">Async / Await syntax</SlideTitle>
-    <Markdown id="async-await-returnType">
-      {snippet1}
-    </Markdown>
-    <Notes>
-      <Markdown>{notes1}</Markdown>
-    </Notes>
-  </Slide>
     <Slide>
       <SlideTitle subtitle="Return type">Async / Await syntax</SlideTitle>
-      <Markdown id="async-await-returnType">
-        {snippet2}
-      </Markdown>
+      <Markdown id="async-await-returnType">{snippet1}</Markdown>
+      <Notes>
+        <Markdown>{notes1}</Markdown>
+      </Notes>
+    </Slide>
+    <Slide>
+      <SlideTitle subtitle="Return type">Async / Await syntax</SlideTitle>
+      <Markdown id="async-await-returnType">{snippet2}</Markdown>
       <Notes>
         <Markdown>{notes2}</Markdown>
       </Notes>

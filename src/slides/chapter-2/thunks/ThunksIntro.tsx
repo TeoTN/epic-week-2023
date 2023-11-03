@@ -1,5 +1,5 @@
-import { Markdown, Slide, SlideTitle } from '../../../components';
-import { Notes } from '../../../components/Notes';
+import { Markdown, Slide, SlideTitle } from "../../../components";
+import { Notes } from "../../../components/Notes";
 
 const notes = `
 While thunks are not an inherent part of programming language like Promises or
@@ -12,6 +12,8 @@ redux-thunk library.
 export const ThunksIntro = () => (
   <Slide>
     <SlideTitle>Thunks</SlideTitle>
-    <Notes><Markdown>{notes}</Markdown></Notes>
+    <Notes>
+      <Markdown>{notes}</Markdown>
+    </Notes>
   </Slide>
 );

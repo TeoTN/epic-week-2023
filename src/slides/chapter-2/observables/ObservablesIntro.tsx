@@ -1,4 +1,4 @@
-import { SectionTitleSlide } from '../../../components';
+import { SectionTitleSlide } from "../../../components";
 
 const notes = `
 Observables are the data structure that is not natively a part of javascript yet.

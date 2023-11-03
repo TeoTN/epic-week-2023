@@ -1,4 +1,4 @@
-import { Slide, SlideTitle } from '../../../components';
+import { Slide, SlideTitle } from "../../../components";
 
 export const PromisesIntro = () => (
   <Slide>
