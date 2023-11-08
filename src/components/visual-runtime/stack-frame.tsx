@@ -15,6 +15,14 @@ const Frame = styled.div`
     display: inline;
     font-size: ${({ theme }) => theme.fonts.size.code};
   }
+
+  & ul {
+    padding-left: 0;
+  }
+
+  & ul li {
+    list-style-type: none;
+  }
 `;
 
 export const StackFrame = ({
@@ -36,14 +44,14 @@ export const StackFrame = ({
       }));
       playbook.forEach(dispatch);
     }
-  }, [sideEffects, origin]);
+  }, [sideEffects, dispatch]);
 
   return (
     <Frame ref={ref}>
       <span>
         <pre className="inline text-accent">{name}</pre> frame:
       </span>
-      <ul className="text-2xs border-gray-300 pl-3">
+      <ul className="text-2xs border-gray-300">
         <li>Arguments: {args.length > 0 ? args.join(", ") : "NONE"}</li>
         <li>Called from: #{ln}</li>
       </ul>

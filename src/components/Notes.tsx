@@ -1,5 +1,13 @@
-import { PropsWithChildren } from "react";
+import { ReactNode } from "react";
 
-export const Notes = ({ children }: PropsWithChildren<{}>) => (
-  <aside className="notes">{children}</aside>
-);
+interface Props {
+  children: ReactNode;
+}
+
+export const Notes = ({ children }: Props) => {
+  if (window.localStorage.getItem("WITH_NOTES") !== "true") {
+    return null;
+  }
+
+  return <aside className="notes">{children}</aside>;
+};

@@ -4,8 +4,8 @@ export const Button = styled.button`
   background-color: var(--r-base00);
   color: white;
   border: 0;
-  font-size: 1.5rem;
-  padding: 0.75rem 1.25rem;
+  font-size: 1.25rem;
+  padding: 0.5rem 1rem;
   margin: 0 0.5rem;
   border-radius: 0.5rem;
 
@@ -18,7 +18,7 @@ export const Button = styled.button`
   }
 
   &[disabled] {
-    background-color: grey;
+    background-color: var(--r-base03);
     cursor: not-allowed;
   }
 `;

@@ -3,8 +3,7 @@ import Reveal from "reveal.js";
 import { ThemeProvider } from "styled-components";
 import { SlidesDeck } from "./components";
 import { revealConfig } from "./reveal.config";
-import { Chapter1, Chapter2, Outro } from "./slides";
-import { Intro } from "./slides/Intro";
+import { Chapter1, Outro, Intro } from "./slides";
 import { theme } from "./theme";
 
 export const App = () => {
@@ -22,7 +21,6 @@ export const App = () => {
         <SlidesDeck>
           <Intro />
           <Chapter1 />
-          <Chapter2 />
           <Outro />
         </SlidesDeck>
       </div>

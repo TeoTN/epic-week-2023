@@ -1,5 +1,10 @@
 .reveal pre {
   box-shadow: none;
+  margin: 0;
+  width: 100%;
+  & > div {
+    margin: 0;
+  }
 }
 
 .line {

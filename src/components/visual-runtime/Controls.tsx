@@ -32,10 +32,10 @@ export const Controls = ({ playbook }: ControlsProps): ReactElement => {
   return (
     <>
       <Button onClick={onPrev} disabled={!prevEnabled()}>
-        Prev
+        ⬅️ Prev
       </Button>
       <Button onClick={onNext} disabled={!nextEnabled()}>
-        Next
+        Next ➡️
       </Button>
     </>
   );

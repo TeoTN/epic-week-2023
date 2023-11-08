@@ -20,9 +20,7 @@ interface VisualRuntimeProps {
 const RuntimeBox = styled.div`
   display: flex;
   flex-direction: row;
-  column-gap: ${({ theme }) => theme.spacing(1)};
-  padding-left: ${({ theme }) => theme.spacing(1)};
-  padding-right: ${({ theme }) => theme.spacing(1)};
+  column-gap: ${({ theme }) => theme.spacing(2)};
 
   ${({ theme }) => theme.breakpoints.down("sm")} {
     flex-direction: column;
@@ -31,11 +29,11 @@ const RuntimeBox = styled.div`
 
 const CallStackWrapper = styled.div.attrs({ className: "stack" })`
   width: 100%;
-  margin: 1.25rem 0;
+  margin: 0rem 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 1.25rem;
+  padding: 1rem;
   flex-grow: 1;
   background-color: ${({ theme }) => theme.colors.dark.base0};
   border-radius: 0.3rem;
@@ -54,9 +52,10 @@ const Queue = styled.div.attrs({ className: "queue" })`
   width: 100%;
   background: rgba(0, 0, 0, 0.5);
   margin: 0.75rem 0;
-  padding: 1rem;
-  border-radius: 0.3rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
   gap: 1rem;
+  box-sizing: border-box;
 `;
 
 const FeatureTitle = styled.span`
@@ -67,19 +66,39 @@ const FeatureTitle = styled.span`
 `;
 
 const Toolbox = styled.div`
-  margin: 0 2.5rem;
+  margin: 0;
 `;
 
 const FloatingControls = styled.div`
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  background-color: ${({ theme }) => theme.colors.dark.base2};
+  border-style: solid;
+  border-width: 1px;
+  border-color: ${({ theme }) => theme.colors.dark.base1};
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  justify-content: center;
 `;
 
 const EditorArea = styled.div`
   position: relative;
   flex: 1 0 65%;
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(2)};
+`;
+
+const StyledMarkdownArea = styled(Markdown)`
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  pre div {
+    margin: 0 !important;
+    border-radius: 0.5rem !important;
+    height: 100%;
+  }
 `;
 
 export const VisualRuntime = withErrorBoundary({ scope: "visual-runtime" })(({
@@ -95,7 +114,7 @@ export const VisualRuntime = withErrorBoundary({ scope: "visual-runtime" })(({
     <RuntimeContext.Provider value={manager}>
       <RuntimeBox>
         <EditorArea>
-          <Markdown
+          <StyledMarkdownArea
             highlighterProps={{
               showLineNumbers: true,
               wrapLines: true,
@@ -104,14 +123,15 @@ export const VisualRuntime = withErrorBoundary({ scope: "visual-runtime" })(({
               },
               lineProps: (lineNumber: number): any => {
                 if (lineNumber === manager.linePointer) {
-                  return { className: "line line-selected" };
+                  return { class: "line line-selected" };
                 }
-                return { className: "line" };
+                return { class: "line" };
               },
+              customStyle: { fontSize: "0.9rem" },
             }}
           >
             {snippet}
-          </Markdown>
+          </StyledMarkdownArea>
           <FloatingControls>
             <Controls playbook={playbook} />
           </FloatingControls>

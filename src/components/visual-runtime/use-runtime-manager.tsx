@@ -13,7 +13,7 @@ const getKey = ({ name, type, handler }: SideEffect) =>
   JSON.stringify({ name, type, handler });
 
 export const useRuntimeManager = (): RuntimeManager => {
-  const [linePointer, setLinePointer] = useState(1);
+  const [linePointer, setLinePointer] = useState(0);
   const [effects, setEffects] = useState<SideEffect[]>([]);
   const stack = useMemo(
     () =>

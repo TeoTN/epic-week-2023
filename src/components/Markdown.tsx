@@ -1,13 +1,15 @@
-import { ReactElement, useCallback } from "react";
+import { ComponentProps, ReactElement, useCallback } from "react";
 import MD from "react-markdown";
-// @ts-expect-error
+// @ts-expect-error JS code
 import { CodeComponent } from "react-markdown/lib/ast-to-react";
 import { SyntaxHighlighterProps } from "react-syntax-highlighter";
 import { Highlighter } from "./Highlighter";
 import { SlideTitle } from "./SlideTitle";
 import { withErrorBoundary } from "./visual-runtime/error-boundary";
 
-interface Props {
+type MarkdownProps = ComponentProps<typeof MD>;
+
+interface Props extends MarkdownProps {
   id?: string;
   children: string;
   highlighterProps?: Omit<SyntaxHighlighterProps, "children">;
@@ -17,13 +19,14 @@ export const Markdown = withErrorBoundary({ scope: "markdown" })(({
   id,
   children,
   highlighterProps,
+  ...props
 }: Props): ReactElement | null => {
   const code: CodeComponent = useCallback(
     (props: any) => <Highlighter {...props} {...highlighterProps} />,
     [highlighterProps],
   );
   const pre = useCallback(
-    (props: any) => <pre data-id={id} {...props} />,
+    ({ node, ...props }: any) => <pre data-id={id} {...props} />,
     [id],
   );
 
@@ -39,6 +42,7 @@ export const Markdown = withErrorBoundary({ scope: "markdown" })(({
         h3: SlideTitle,
         pre,
       }}
+      {...props}
     >
       {children}
     </MD>

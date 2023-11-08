@@ -11,6 +11,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "dedent": "1.5.1",
     "framer-motion": "^5",
     "prism-themes": "1.9.0",
     "prismjs": "1.29.0",
