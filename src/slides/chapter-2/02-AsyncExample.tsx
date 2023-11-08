@@ -167,7 +167,7 @@ And that finishes a the second event loop cycle.
 export const AsyncExample = () => {
   return (
     <Slide>
-      <SlideTitle>Promises</SlideTitle>
+      <SlideTitle>What does it mean to be asynchronous?</SlideTitle>
       <VisualRuntime
         playbook={playbook}
         snippet={snippet}

@@ -4,27 +4,32 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 
 const notes1 = `
-Another important building block of the runtime environment that I would like to
-talk about is the Event Loop. It is the core feature that enables asynchrony in
-JavaScript environment.
+* Task
+  * \`script\` tag
+  * DOM event
+  * \`setTimeout\` / \`setInterval\` callback
+* Microtask
+  * \`Promise.then\` / \`Promise.catch\` callback
+  * \`window.queueMicrotask\`
+* \`requestAnimationFrame\`
 `;
 
 const notes2 = `
-Event loop is a mechanism that governs when and what code is executed by the 
+Event loop is a mechanism that governs when and what code is executed by the
 engine. It is implemented in a run-to-completion manner, meaning, that any task
 processed at the current moment will run until its finished, potentially blocking
 the next task from being run.
-This differs from threads known from other programming languages in that the 
+This differs from threads known from other programming languages in that the
 system cannot pause the thread, and switch to executing code from another thread.
 
 The loop is constantly waiting for tasks to arrive from the environment, and
 performs them. This can include rendering steps like computing styles and layout,
-painting the updates to the DOM, calling functions queued with 
+painting the updates to the DOM, calling functions queued with
 requestAnimationFrame. It will also execute code in response to events we have
 setup listeners for, or timers that we have scheduled.
 
 If our main code has for instance set up a timer to be executed after one second,
-the browser will setup a timer, and after no less than a second, it will push 
+the browser will setup a timer, and after no less than a second, it will push
 a message to the Task Queue. The task will be picked up in the next cycle of the
 event loop, and delegated to the JavaScript engine, resulting in the callback
 being executed.
