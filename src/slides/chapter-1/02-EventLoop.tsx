@@ -2,6 +2,7 @@ import { Markdown, Slide, SlideTitle } from "../../components";
 import { Notes } from "../../components/Notes";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import dedent from 'dedent';
 
 const notes1 = `
 * Task
@@ -99,28 +100,15 @@ export const EventLoop = () => {
       </Slide>
       <Slide>
         <SlideTitle>Event Loop</SlideTitle>
-        <EventLoopContainer>
-          <LoopItem
-            animate={animate}
-            transition={{ ...transition, delay: 2.8 }}
-          />
-          <LoopItem
-            animate={animate}
-            transition={{ ...transition, delay: 2.3 }}
-          />
-          <LoopItem
-            animate={animate}
-            transition={{ ...transition, delay: 1.8 }}
-          />
-          <LoopItem
-            animate={animate}
-            transition={{ ...transition, delay: 1.3 }}
-          />
-          <LoopItem
-            animate={animate}
-            transition={{ ...transition, delay: 0.8 }}
-          />
-        </EventLoopContainer>
+        <Markdown>
+          {dedent`
+            * Synchronous tasks - e.g. <script> tag loaded
+            * Asynchronous tasks - \`setTimeout\`, \`setInterval\`, DOM Evenets (\`addEventListener\`)
+            * Microtasks - \`window.queueMicrotask\`, \`Promise.then\`
+            * \`requestAnimationFrame\`
+            * Styles recalculating, layout, paint
+          `}
+        </Markdown>
         <Notes>
           <Markdown>{notes2}</Markdown>
         </Notes>

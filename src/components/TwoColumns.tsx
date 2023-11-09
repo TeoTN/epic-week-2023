@@ -10,6 +10,7 @@ interface Props {
 const TwoColumnsLayout = styled.div`
   display: flex;
   font-size: 0.8em;
+  gap: 1rem;
   & > .left {
     flex: 1;
   }
