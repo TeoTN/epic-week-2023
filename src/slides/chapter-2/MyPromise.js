@@ -1,7 +1,3 @@
-import { Slide, SlideTitle } from "../../components";
-import { RichCode } from "../../components/RichCode";
-
-const promise = `
 const isThenable = (o) => !!o && typeof o.then === "function";
 
 const safeResolve = (resolve, reject, onValue, value) => {
@@ -100,13 +96,16 @@ class MyPromise {
     });
   }
 }
-`;
 
-export const PromiseImplementation = () => (
-  <Slide>
-    <SlideTitle>Promise Implementation</SlideTitle>
-    <RichCode className="language-js" customStyle={{ fontSize: ".25rem" }}>
-      {promise}
-    </RichCode>
-  </Slide>
-);
+(() => {
+  const delay = (ms) => new MyPromise((res) => setTimeout(res, ms));
+  delay(1000).then(() => console.log("1 sec"));
+  delay(2000)
+    .then(() => MyPromise.resolve(2))
+    .then((r) => console.log(`${r} sec`));
+  delay(3000)
+    .then(() => {
+      throw 3;
+    })
+    .catch((r) => console.log(`${r} sec`));
+})();
