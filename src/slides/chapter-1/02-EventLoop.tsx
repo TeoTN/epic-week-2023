@@ -1,116 +1,49 @@
+import dedent from "dedent";
 import { Markdown, Slide, SlideTitle } from "../../components";
 import { Notes } from "../../components/Notes";
-import styled from "styled-components";
-import { motion } from "framer-motion";
-import dedent from 'dedent';
 
-const notes1 = `
-* Task
-  * \`script\` tag
-  * DOM event
-  * \`setTimeout\` / \`setInterval\` callback
-* Microtask
-  * \`Promise.then\` / \`Promise.catch\` callback
-  * \`window.queueMicrotask\`
-* \`requestAnimationFrame\`
+const notes = `
+You might be wondering, how your web browser achieves asynchronous behaviour?
+
+To do this, it relies on the concept of event loop. The browser will run over
+the event loop in cycles, processing various steps as it goes.
+
+One key step in event loop is processing tasks. You might wonder, what is a
+task? There are a few key tasks, namely your JavaScript code loaded with script
+tag, as well as callbacks scheduled with setTimeout or setInterval APIs. Another
+example of a task is a DOM event, like a click or keyboard typing.
+
+In each run of the event loop, tasks will be taken from the queue and executed.
+If a task results in scheduling another task, it won't be executed until another
+run of the event loop.
+
+Apart from that, there's a mechanism called microtasks, which are executed at the
+end of single event loop iteration. They are the mechanism used by promises, and
+are slightly different in that they are run until the queue is empty, so if
+microtask schedules another microtask, it will get executed as well.
+
+Finally, there are some other steps that are part of the event loop like
+functions scheduled with request animation frame, or all the work that is required
+to render your page. They are re-run only when needed and might not be a part of
+each interation.
 `;
-
-const notes2 = `
-Event loop is a mechanism that governs when and what code is executed by the
-engine. It is implemented in a run-to-completion manner, meaning, that any task
-processed at the current moment will run until its finished, potentially blocking
-the next task from being run.
-This differs from threads known from other programming languages in that the
-system cannot pause the thread, and switch to executing code from another thread.
-
-The loop is constantly waiting for tasks to arrive from the environment, and
-performs them. This can include rendering steps like computing styles and layout,
-painting the updates to the DOM, calling functions queued with
-requestAnimationFrame. It will also execute code in response to events we have
-setup listeners for, or timers that we have scheduled.
-
-If our main code has for instance set up a timer to be executed after one second,
-the browser will setup a timer, and after no less than a second, it will push
-a message to the Task Queue. The task will be picked up in the next cycle of the
-event loop, and delegated to the JavaScript engine, resulting in the callback
-being executed.
-`;
-
-const ITEM_SIZE = 100;
-
-const EventLoopContainer = styled(motion.div)`
-  position: relative;
-  background: linear-gradient(180deg, #d309e1 0%, rgb(156, 26, 255) 100%);
-  border-radius: 1rem;
-  width: 100%;
-  height: 50vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-`;
-
-const LoopItem = styled(motion.div)`
-  position: absolute;
-  background: white;
-  border-radius: 30px;
-  width: ${ITEM_SIZE}px;
-  height: ${ITEM_SIZE}px;
-`;
-
-const animate = {
-  x: [
-    -0.75 * ITEM_SIZE,
-    -ITEM_SIZE,
-    0,
-    ITEM_SIZE,
-    0.75 * ITEM_SIZE,
-    -0.75 * ITEM_SIZE,
-  ],
-  y: [-2 * ITEM_SIZE, 0, 0, 0, -2 * ITEM_SIZE, -2 * ITEM_SIZE],
-  scale: [0.5, 1, 1, 1, 0.5, 0.5],
-  opacity: [0.3, 1, 1, 1, 0.3, 0.3],
-  rotate: [270, 0, 0, 0, 270, 0],
-  borderRadius: ["50%", "10%", "10%", "10%", "50%", "50%"],
-  backgroundColor: [
-    "#ffffff",
-    "#ffffff",
-    "#00BDA5",
-    "#ffffff",
-    "#ffffff",
-    "#ffffff",
-  ],
-};
-const transition = {
-  duration: 2,
-  ease: ["linear", "backIn", "backIn", "linear", "linear"],
-  times: [0.3, 1, 1.5, 2, 2.5],
-  repeat: Infinity,
-  repeatDelay: 0.3,
-};
 
 export const EventLoop = () => {
   return (
     <>
       <Slide>
         <SlideTitle>Event Loop</SlideTitle>
-        <Notes>
-          <Markdown>{notes1}</Markdown>
-        </Notes>
-      </Slide>
-      <Slide>
-        <SlideTitle>Event Loop</SlideTitle>
         <Markdown>
           {dedent`
             * Synchronous tasks - e.g. <script> tag loaded
-            * Asynchronous tasks - \`setTimeout\`, \`setInterval\`, DOM Evenets (\`addEventListener\`)
-            * Microtasks - \`window.queueMicrotask\`, \`Promise.then\`
+            * Asynchronous tasks - \`setTimeout\`, \`setInterval\`, DOM Events
+            * Microtasks - \`window.queueMicrotask\`, \`Promise.prototype.then\`, \`Promise.prototype.catch\`
             * \`requestAnimationFrame\`
             * Styles recalculating, layout, paint
           `}
         </Markdown>
         <Notes>
-          <Markdown>{notes2}</Markdown>
+          <Markdown>{notes}</Markdown>
         </Notes>
       </Slide>
     </>

@@ -121,47 +121,7 @@ const playbook: SideEffect[] = [
 ];
 
 const notes = `
-Let's see how this works in practice on a simpler example with just the single
-timeout. **NEXT**
-
-Initially, the global scope is executed, and we start with interpreting the first
-line - which is a call to setTimeout.**NEXT**
-
-The setTimeout is added to the call stack, and two arguments are passed to it -
- the function callback and timeout value.**NEXT**
-
-It results in a call to Timer API that is available both in the web browser and
-node.js environment. **NEXT**
-
-After a second has passed, the timer adds a task to the queue that will be
-executed in the next cycle of event loop. **NEXT**
-
-Now as we return from setTimeout function, we've finished processing our snippet
-and the call stack gets emptied. **NEXT**
-
-As the event loop has finished its cycle, it may now pick up a task from the
-queue, which is the callback we scheduled earlier. **NEXT**
-
-The promise was immediately resolved, so the registered callback is added to the
-microtask queue. **NEXT**
-
-We proceed to the next statement in the callback function, which is the
-console.log **NEXT**
-
-The console log is put onto the stack, printing out "Listener 1" phrase. **NEXT**
-
-Next, the console.log is taken from the stack, and since this was the end of the
-callback, it's also removed from the stack. **NEXT**
-
-Now, since the call stack is empty, even though the event loop cycle might have
-not finished, we immediately pull all tasks from the microtask queue. Even if they
-created new microtasks, they would be pulled as well. This results in adding our
-anonymous arrow function to the stack **NEXT**
-
-As a result we invoke another console.log, this time with "Microtask 1" - that's
- printed in the console.**NEXT**
-
-And that finishes a the second event loop cycle.
+(Do live)
 `;
 
 export const AsyncExample = () => {
