@@ -10,6 +10,7 @@ import { Promisify } from "./08-Promisify";
 import { DeferredObject } from "./09-Deferred";
 import { AsyncFn } from "./10-AsyncFn";
 import { Await } from "./11-Await";
+import { ReturnAwait } from "./12-ReturnAwait";
 
 export const Chapter1 = () => (
   <Slide>
@@ -24,5 +25,6 @@ export const Chapter1 = () => (
     <DeferredObject />
     <AsyncFn />
     <Await />
+    <ReturnAwait />
   </Slide>
 );

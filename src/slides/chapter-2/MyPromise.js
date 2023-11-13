@@ -43,6 +43,9 @@ class MyPromise {
     }
     const { subscribers = [] } = this.state;
     this.state = { type: "rejected", cause };
+    if (subscribers.length === 0) {
+      throw cause; // Unhandled Promise Rejection
+    }
     window.queueMicrotask(() => {
       subscribers.forEach(({ onReject }) => onReject(cause));
     });

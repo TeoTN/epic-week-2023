@@ -1,5 +1,10 @@
 import dedent from "dedent";
-import { Container, Markdown, Slide, SlideTitle } from "../../components";
+import {
+  FlexibleContainer,
+  Markdown,
+  Slide,
+  SlideTitle,
+} from "../../components";
 import { Notes } from "../../components/Notes";
 import { RichCode } from "../../components/RichCode";
 
@@ -31,7 +36,7 @@ export const AsynchronyDefinition = () => (
     <SlideTitle component="h2">
       What does it mean to be asynchronous?
     </SlideTitle>
-    <Container>
+    <FlexibleContainer>
       <RichCode className="language-js" customStyle={{ fontSize: "1rem" }}>
         {dedent`
         console.log('Synchronous 🧁');
@@ -58,7 +63,7 @@ export const AsynchronyDefinition = () => (
 
       `}
       </RichCode>
-    </Container>
+    </FlexibleContainer>
     <Notes>
       <Markdown>{notes}</Markdown>
     </Notes>

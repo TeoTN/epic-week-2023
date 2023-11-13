@@ -1,5 +1,5 @@
 import dedent from "dedent";
-import { Markdown, Slide, SlideTitle } from "../../components";
+import { Container, Markdown, Slide, SlideTitle } from "../../components";
 import { Notes } from "../../components/Notes";
 
 const notes = `
@@ -33,15 +33,17 @@ export const EventLoop = () => {
     <>
       <Slide>
         <SlideTitle>Event Loop</SlideTitle>
-        <Markdown>
-          {dedent`
+        <Container>
+          <Markdown>
+            {dedent`
             * Synchronous tasks - e.g. <script> tag loaded
             * Asynchronous tasks - \`setTimeout\`, \`setInterval\`, DOM Events
             * Microtasks - \`window.queueMicrotask\`, \`Promise.prototype.then\`, \`Promise.prototype.catch\`
             * \`requestAnimationFrame\`
             * Styles recalculating, layout, paint
           `}
-        </Markdown>
+          </Markdown>
+        </Container>
         <Notes>
           <Markdown>{notes}</Markdown>
         </Notes>
