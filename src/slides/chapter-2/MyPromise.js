@@ -73,9 +73,13 @@ class MyPromise {
           onReject: (error) => safeReject(reject, onReject, error),
         });
       } else if (self.type === "resolved") {
-        safeResolve(resolve, reject, onValue, self.value);
+        window.queueMicrotask(() => {
+          safeResolve(resolve, reject, onValue, self.value);
+        });
       } else if (self.type === "rejected") {
-        safeReject(reject, onReject, self.cause);
+        window.queueMicrotask(() => {
+          safeReject(reject, onReject, self.cause);
+        });
       }
     });
   };
