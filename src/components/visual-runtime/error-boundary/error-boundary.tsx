@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import styled from "styled-components";
 
 enum ScopeState {
@@ -14,6 +14,7 @@ export interface ErrorBoundaryProps {
   scope: string;
   title?: string;
   description?: string;
+  children: ReactNode;
 }
 
 const Alert = styled.div`

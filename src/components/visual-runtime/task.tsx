@@ -2,6 +2,7 @@ import { ApiCallEffect, MicroTaskEffect, TaskEffect } from "./effects";
 import { useCallback, useRef } from "react";
 import { useBoundingClientRect } from "./useBoundingClientRect";
 import { useDispatch } from "./use-dispatch";
+// @ts-expect-error Known issue
 import { motion } from "framer-motion";
 import styled from "styled-components";
 

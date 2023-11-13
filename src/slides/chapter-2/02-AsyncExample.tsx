@@ -1,15 +1,14 @@
 import { Markdown, Slide, SlideTitle } from "../../components";
-import { VisualRuntime } from "../../components/visual-runtime";
 import { Notes } from "../../components/Notes";
+import { VisualRuntime } from "../../components/visual-runtime";
 import {
+  SideEffect,
   apiCall,
   compose,
   microTask,
   popStack,
   pushLine,
   pushStack,
-  repeat,
-  SideEffect,
   task,
 } from "../../components/visual-runtime/effects";
 

@@ -3,6 +3,7 @@ import {
   SyntaxHighlighterProps,
 } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+// @ts-expect-error Known issue
 import { ReactMarkdownProps } from "react-markdown/lib/ast-to-react";
 import { withErrorBoundary } from "./visual-runtime/error-boundary";
 

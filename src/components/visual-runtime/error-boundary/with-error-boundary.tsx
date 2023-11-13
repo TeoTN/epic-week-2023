@@ -2,7 +2,7 @@ import React from "react";
 import { ErrorBoundary, ErrorBoundaryProps } from "./error-boundary";
 
 export const withErrorBoundary =
-  (ebProps: ErrorBoundaryProps) =>
+  (ebProps: Omit<ErrorBoundaryProps, "children">) =>
   <T extends object>(Component: React.ComponentType<T>): React.FC<T> => {
     return ({ ...props }: T) => (
       <ErrorBoundary {...ebProps}>

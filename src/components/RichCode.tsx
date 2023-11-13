@@ -1,3 +1,4 @@
+// @ts-expect-error Known issue
 import { ReactMarkdownProps } from "react-markdown/lib/ast-to-react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";

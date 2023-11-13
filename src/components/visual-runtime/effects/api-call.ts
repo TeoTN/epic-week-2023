@@ -1,5 +1,5 @@
+import { StackFrameEffect } from "./index";
 import { BaseSideEffect, SideEffectType } from "./types";
-import { SideEffect, StackFrameEffect } from "./index";
 
 export interface ApiCallEffect extends BaseSideEffect {
   type: SideEffectType.API_CALL;
