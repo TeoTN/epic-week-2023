@@ -4,16 +4,17 @@ import { CallStack } from "./01-CallStack";
 import { PromiseImplementation } from "./03-PromiseImplementation";
 
 const notes = `
-Before we start our journey, we need to agree on a few basic terms, so that
-it's easier to navigate this landscape.
+Now that we have some grasp of how to use promises, let's make a deep dive
+into how they work in the web browser, and implement an approximation of
+a Promise class.
 
-For starters, you might be wondering what does it mean for something to be asynchronous?
-Let me try to explain: typically, you expect your code to be executed roughly line by line
-in the order of execution.
+---
+This part may slightly exceed the planned talk time by about 5 minutes, so please
+feel free to leave if needed and watch the recording later if you can't stay a bit longer.
 
-We talk about asynchrony, when a programming language allows you to execute function out of order,
-in response to some future event, like user interactions or time elapsing. This creates a perceived
-gap between code that runs now, and code that is scheduled to run later. ⬇️
+Regardless please remember to leave some feedback in the dedicated Slack
+channel afterwards, I will also post a google form after the talk to collect your feedback.
+⬇️
 `;
 
 export const Chapter2 = () => (

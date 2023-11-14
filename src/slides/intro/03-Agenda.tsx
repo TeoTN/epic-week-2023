@@ -12,10 +12,7 @@ Next, we'll make a deep dive into javascript engine, on the example of V8, and
 we'll see how it handles asynchrony.
 
 Finally, we'll learn how promises work by implementing a home-baked Promise
-class. This part may exceed the planned talk time by up to 5 minutes, so please
-feel free to leave earlier and watch the recording later if you can't stay a bit
-longer. Whether you stay or not please remember to leave some feedback
-in the dedicated Slack channel afterwards.
+class.
 ➡️
 `;
 
